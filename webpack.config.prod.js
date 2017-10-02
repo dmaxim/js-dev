@@ -1,10 +1,9 @@
 import path from 'path';
-import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 export default {
   debug: true,
-  devtool: 'source-map',
+  devtool: 'inline-source-map',
   noInfo: false,
   entry: [
     path.resolve(__dirname, 'src/index')
@@ -16,13 +15,10 @@ export default {
     filename: 'bundle.js'
   },
   plugins: [
-//Create HTML file that includes a reference to bundled JS
 new HtmlWebpackPlugin({
-	templates: 'src/index.html',
-	inject: true
-}),
-new webpack.optimize.DedupePlugin(),
-new webpack.optimize.UglifyJsPlugin()
+  template: 'src/index.html',
+  inject: true
+  })
   ],
   module: {
     loaders: [
@@ -31,3 +27,4 @@ new webpack.optimize.UglifyJsPlugin()
     ]
   }
 }
+
