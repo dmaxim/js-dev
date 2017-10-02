@@ -10,11 +10,11 @@ describe('Our first test', () => {
 
 
 describe('index.html', () => {
-	it('should say hello', (done) => {
+	it('should have h2 that says users', (done) => {
 		const index = fs.readFileSync('./src/index.html', 'utf-8');
 		jsdom.env(index, function(err, window) {
 			const h2 = window.document.getElementsByTagName('h2')[0];
-			expect(h2.innerHTML).to.equal("Hello from the index page")
+			expect(h2.innerHTML).to.equal("Users")
 			done();// Need to tell mocha test is done
 			window.close();
 		});
