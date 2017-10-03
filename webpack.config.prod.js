@@ -38,7 +38,8 @@ new HtmlWebpackPlugin({
 	minifyCSS: true,
 	minifyURLs: true
   },
-  inject: true
+  inject: true,
+  trackJSToken: 'df173737fe964a25a651bd9cfc1c1515'
   }),
   new webpack.optimize.DedupePlugin(),
   new webpack.optimize.UglifyJsPlugin()
